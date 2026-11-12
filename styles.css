@@ -1,0 +1,219 @@
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e63946, #9d0208);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+main {
+    background: #f8f9fa;
+    width: 100%;
+    max-width: 550px;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    border: 6px solid #222;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+    color: #ffcb05;
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-shadow:
+        3px 3px 0 #2a75bb,
+        -1px -1px 0 #2a75bb;
+}
+
+/* ===== FORMULÁRIO ===== */
+#formPoke {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#idPoke {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 3px solid #2a75bb;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#idPoke:focus {
+    border-color: #ffcb05;
+    box-shadow: 0 0 10px rgba(255, 203, 5, 0.7);
+}
+
+/* ===== BOTÃO ===== */
+button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    background: #ffcb05;
+    color: #222;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 0 #c99b00;
+}
+
+button:hover {
+    background: #2a75bb;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 #174a7e;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* ===== MENSAGEM ===== */
+#msg {
+    color: #e63946;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* ===== RESULTADO ===== */
+#resultado {
+    background: linear-gradient(145deg, #eaf4ff, #d6eaff);
+    border: 3px solid #2a75bb;
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+/* ===== NOME DO POKÉMON ===== */
+#nomePokemon {
+    color: #2a75bb;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 900;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== TÍTULOS NORMAL E SHINY ===== */
+#resultado > p:nth-of-type(1),
+#resultado > p:nth-of-type(2) {
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px 0 5px;
+}
+
+/* ===== IMAGENS ===== */
+#imgPoke,
+#imgPokeshiny {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+    background: white;
+    border: 4px solid #ffcb05;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px auto 20px;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+#imgPoke:hover,
+#imgPokeshiny:hover {
+    transform: scale(1.08) rotate(3deg);
+}
+
+/* ===== INFORMAÇÕES DO POKÉMON ===== */
+#resultado p:has(#PesoPoke),
+#resultado p:has(#MovePoke),
+#resultado p:has(#AbilPoke),
+#resultado p:has(#TypePoke) {
+    background: white;
+    padding: 14px;
+    border-radius: 12px;
+    margin: 12px 0;
+    border-left: 5px solid #ffcb05;
+    text-align: left;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Valores das informações */
+#PesoPoke,
+#MovePoke,
+#AbilPoke,
+#TypePoke {
+    color: #2a75bb;
+    font-weight: bold;
+    margin-left: 6px;
+    overflow-wrap: anywhere;
+}
+
+/* ===== ÁUDIO ===== */
+#audioPoke {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    main {
+        padding: 22px 15px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    #formPoke {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #nomePokemon {
+        font-size: 1.8rem;
+    }
+
+    #imgPoke,
+    #imgPokeshiny {
+        width: 155px;
+        height: 155px;
+    }
+
+    #resultado {
+        padding: 20px 12px;
+    }
+}
